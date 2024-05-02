@@ -3,6 +3,11 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
+local_zip = 'tmp/rockpaperscissors.zip'
+zip_ref = zipfile.ZipFile(local_zip, 'r')
+zip_ref.extractall('tmp')
+zip_ref.close()
+
 # Define directories
 base_dir = "tmp/rockpaperscissors"
 train_dir = os.path.join(base_dir, "train")
