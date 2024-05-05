@@ -3,7 +3,6 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-
 local_zip = "tmp/rockpaperscissors.zip"
 zip_ref = zipfile.ZipFile(local_zip, "r")
 zip_ref.extractall("tmp")
@@ -117,4 +116,7 @@ def train_model():
 
 
 # untuk train model
-train_model()
+try:
+    train_model()
+except Exception as e:
+    print(f"An error occurred: {e}")
